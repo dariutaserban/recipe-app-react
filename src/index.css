@@ -1,0 +1,278 @@
+/* CSS RESET */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* General Styles */
+body{
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+h1{
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+h2{
+  font-size: 0.8rem;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+}
+a:link    { color: black; }
+a:visited { color: black; }
+a:hover   { color: red;}
+a:focus   { outline: 1px solid blue; }
+a:active  { color: yellow ;}
+/* Search Page */
+input{
+  background-color: #f0f0f0;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  color: #040404;
+  position: relative;
+  width: 80%;
+  border-radius: 0.6rem;
+}
+input::placeholder{
+  color: #040404;
+}
+input:focus{
+  outline: none;
+}
+.recipe-search-page{
+  padding: 1.5rem;
+}
+.recipe-search button{
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.8rem 0;
+  position: absolute;
+  right: 14%;
+  cursor: pointer;
+}
+.recipe-search{
+  text-align: center;
+}
+.recipe-preview{
+  box-shadow: 0px 26px 17px 0px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  margin: 20px 0 20px 0;
+  max-width: 100%;
+  border-radius: 0.6rem;
+  position: relative;
+  overflow: hidden;
+}
+.no-recipes{
+  text-align: center;
+}
+.img-search{
+  width: 100%;
+  height: auto;
+}
+.recipe-facts{
+  color: #f9f9f9;
+  position: absolute;
+  margin-bottom: 0;
+  top: 70%;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  padding:10px;
+  max-height: 50%;
+  width: 100%;
+  background: linear-gradient(transparent 0%, #050505 75%);
+}
+.recipe-stats{
+  margin: 0;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.recipe-stats span:last-child{
+  border-left: 1px solid #f9f9f9;
+  padding-left: 0.6rem;
+}
+.recipes-cuisine h3{
+  text-align: center;
+  margin: 20px 0;
+}
+.recipes-cuisine-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.recipes-cuisine-btn button{
+  border: none;
+  border-radius: 0.6rem;
+  margin: 0.2rem;
+  cursor: pointer;
+}
+.recipes-cuisine-btn button:hover{
+  background-color: red;
+}
+/* Recipe Detail Page */
+.recipe-header{
+  display: flex;
+  padding: 0.4rem;
+}
+.recipe-title{
+  padding-left: 0.6rem;
+}
+.recipe-stats-detail{
+  text-align: center;
+}
+.recipe-stats-detail{
+  padding: 0.7rem;
+}
+.recipe-info{
+  padding: 1rem;
+}
+.recipe-ingredients{
+  margin-bottom: 1.5rem;
+}
+.recipe-ingredients-list{
+  padding: 0;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.6rem;
+}
+.recipe-ingredients-list li{
+  list-style-type: none;
+  border-bottom: 1px solid #191a1b;
+  padding-bottom: 10px;
+}
+.recipe-ingredients-list li:last-child{
+  border: none;
+}
+.recipe-instructions{
+  background-color: #f0f0f0;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.recipe-dish-types{
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.recipe-dish-types li{
+  list-style: none;
+  padding: 0;
+  color: #202020;
+  background-color: #c1c1c1;
+  max-width: fit-content;
+  padding: 0.3rem 0.5rem;
+  border-radius: 1rem;
+  margin: 0.4rem;
+}
+.recipe-copyright{
+  text-align: center;
+}
+/* Media queries */
+@media screen and (min-width: 800px) {
+  body{
+    font-size: 24px;
+  }
+  /* Search Page */
+  .recipes-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 800px;
+    margin: auto;
+  }
+  .recipe-preview{
+    margin: 20px;
+  }
+  /* RecipeDetailPage */
+  .recipe-header, h1{
+    font-size: 2rem;
+  }
+  .recipe-image {
+    border-radius: 32px;
+    max-width: 70%;
+
+  }
+  .recipe{
+    margin: auto;
+  }
+  .recipe-img-stats{
+    padding: 3rem;
+    display: flex;
+  }
+  .recipe-info{
+    padding: 3rem;
+  }
+  .recipe-stats-detail{
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: start;
+    margin-left: 30px;
+    border-radius: 0.6rem;
+    background-color: #f0f0f0;
+    width: 40%;
+    height: auto;
+    font-size: 1.7rem;
+  }
+  .recipe-stats-detail span{
+    border-bottom: 1px solid black;
+  }
+  .recipe-stats-detail span:last-child{
+    border: none;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .recipe{
+    max-width: 1200px;
+    margin: auto;
+  }
+}

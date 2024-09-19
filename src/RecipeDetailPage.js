@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function RecipeDetailPage() {
-  const { id } = useParams(); // Assuming you're using React Router
+  const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
 

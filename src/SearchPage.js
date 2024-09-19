@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function SearchPage() {
   const [query, setQuery] = useState('');
-  const [recipes, setRecipes] = useState([]); // Initialize as an empty array
+  const [recipes, setRecipes] = useState([]);
   const [cuisine, setCuisine] = useState('');
 
   const cuisines = [
@@ -25,10 +25,10 @@ function SearchPage() {
         `https://api.spoonacular.com/recipes/complexSearch?query=${query}&cuisine=${cuisineOverride}&apiKey=f5da979edcd74faa9026601b77ffc614&addRecipeInformation=true`
       );
       const data = await response.json();
-      setRecipes(data.results || []); // Ensure recipes is an array
+      setRecipes(data.results || []);
     } catch (error) {
       console.error("Error fetching the recipes:", error);
-      setRecipes([]); // Set recipes to an empty array on error
+      setRecipes([]);
     }
   };
 
